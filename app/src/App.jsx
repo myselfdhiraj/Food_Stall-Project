@@ -1,7 +1,46 @@
 import styled from "styled-components";
+import FoodListing from "./component/FoodListing";
+import { useEffect, useState } from "react";
 
-
+export const SERVER_URL = "http://localhost:9000";
 function App() {
+  const [foodData, setFoodData] = useState(null);
+  const [loder, setLoder] = useState(false);
+  const [error, setError] = useState(null);
+  const [filteredData, setfilteredData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(SERVER_URL);
+      try {
+        setLoder(true);
+        const jsonData = await response.json();
+        setfilteredData(jsonData);
+        setFoodData(jsonData);
+        setLoder(false);
+      } catch (error) {
+        setError(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  function filterData(e) {
+    const searchValue = e.target.value;
+    console.log(searchValue);
+    if (searchValue === "") {
+      setfilteredData(null);
+    } else {
+      const filter = foodData?.filter((food) =>
+        food.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setfilteredData(filter);
+    }
+  }
+
+  if (loder) return <div>"Loading..."</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <>
       <MainContainer>
@@ -9,7 +48,12 @@ function App() {
           <div className="navbar">
             <div className="logo">Food Stall</div>
             <div className="search">
-              <input type="text" name="search" placeholder="Search Food...." />
+              <input
+                type="text"
+                name="search"
+                placeholder="Search Food...."
+                onChange={filterData}
+              />
             </div>
           </div>
           <div className="navbtn">
@@ -21,7 +65,16 @@ function App() {
 
         <FoodContainer>
           <FoodListSection>
-
+            {filteredData?.map((value) => (
+              <FoodListing
+                name={value.name}
+                text={value.text}
+                price={value.price}
+                type={value.type}
+                img={value.image}
+                key={value}
+              />
+            ))}
           </FoodListSection>
         </FoodContainer>
       </MainContainer>
@@ -96,12 +149,16 @@ const FoodContainer = styled.div`
   background-image: url("./bg.png");
   background-size: cover;
   width: 100%;
-  height: calc(100vh - 160px);
+  min-height: calc(100vh - 160px);
+  padding: 30px;
 `;
-const FoodListSection = styled.div`
+const FoodListSection = styled.section`
   width: 80%;
   margin: 30px auto;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  column-gap: 20px;
+  row-gap: 50px;
+  flex-wrap: wrap;
 `;
