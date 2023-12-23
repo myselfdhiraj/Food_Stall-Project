@@ -20,7 +20,9 @@ function App() {
         </NavContainer>
 
         <FoodContainer>
-          <FoodCard></FoodCard>
+          <FoodListSection>
+
+          </FoodListSection>
         </FoodContainer>
       </MainContainer>
     </>
@@ -96,6 +98,10 @@ const FoodContainer = styled.div`
   width: 100%;
   height: calc(100vh - 160px);
 `;
-const FoodCard = styled.div`
-  width: 280px;
+const FoodListSection = styled.div`
+  width: 80%;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
 `;
