@@ -1,5 +1,15 @@
 # Food Stall - Food Listing WebApp
 
+- [Live Test This App](#live-test-this-app)
+- [Description](#description)
+  - [Key Features](#key-features)
+- [Local Development Environment for ReactJS](#local-development-environment-for-reactjs)
+  - [Prerequisites](#prerequisites)
+  - [Setting up the Project](#setting-up-the-project)
+  - [Local Server for Data](#local-server-for-data)
+  - [Running Your App Locally](#running-your-app-locally)
+- [How to Contribute](#how-to-contribute)
+
 ## Live Test This App
 
 Visit [Your Live Test Link](https://your-live-link.com) to explore and enjoy a variety of delicious foods!
@@ -9,19 +19,14 @@ Welcome to our project! This is a simple and user-friendly Food Listing WebApp m
 
 ### Key Features:
 - **Local Data Fetch:** The app fetches data from a local Node.js server, providing a seamless experience.
-
 - **Easy Navigation:** Our user-friendly interface lets you effortlessly explore different types of foods. Find hearty dinners, light snacks, or sweet treats with just a click.
-
----- 
 
 ## Local Development Environment for ReactJS
 
 ### Prerequisites:
-
 - **Node.js and npm:** Make sure you have Node.js and npm installed on your machine. Download them from [nodejs.org](https://nodejs.org/).
 
 ### Setting up the Project:
-
 1. **Clone Project Repo:**
     ```bash
     git clone https://github.com/myselfdhiraj/Food_Stall-Project
@@ -37,7 +42,7 @@ Welcome to our project! This is a simple and user-friendly Food Listing WebApp m
     ```bash
     npm run dev
     ```
-    Access your app at `http://localhost:3000` in your web browser.
+    Access your app at `http://localhost:5173` in your web browser.
 
 4. **Local Server for Data:**
    - Navigate to the "server" folder:
@@ -58,10 +63,7 @@ Welcome to our project! This is a simple and user-friendly Food Listing WebApp m
    - Access your Vite React app at `http://localhost:3000`.
    - Access Server API data at `http://localhost:9000`
 
-----
-
 ## How to Contribute:
-
 We welcome contributions to make this Food Listing WebApp even better! If you have ideas for features, improvements, or bug fixes, follow these steps:
 
 1. Fork the repository.
@@ -70,5 +72,3 @@ We welcome contributions to make this Food Listing WebApp even better! If you ha
 4. Your contribution will be reviewed and merged into the main branch.
 
 We hope you enjoy using our Food Listing WebApp, and we look forward to your contributions!
-
-----

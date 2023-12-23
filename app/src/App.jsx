@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 function App() {
   return (
     <>
@@ -12,12 +13,15 @@ function App() {
             </div>
           </div>
           <div className="navbtn">
-            <Buttons>All</Buttons>
-            <Buttons>Breakfast</Buttons>
-            <Buttons>Lunch</Buttons>
-            <Buttons>Dinner</Buttons>
+            {["All", "Breakfast", "Lunch", "Dinner"].map((value, index) => (
+              <Buttons key={index}>{value}</Buttons>
+            ))}
           </div>
         </NavContainer>
+
+        <FoodContainer>
+          <FoodCard></FoodCard>
+        </FoodContainer>
       </MainContainer>
     </>
   );
@@ -32,10 +36,12 @@ const MainContainer = styled.div`
 const NavContainer = styled.section`
   width: 100%;
   padding: 20px;
-  height: 80px;
+  height: auto;
   gap: 50px;
+  z-index: 3;
+  background-color: #323334;
   .navbar {
-    margin: 10px auto;
+    margin: 10px auto 0;
     width: 85%;
     height: auto;
     display: flex;
@@ -67,12 +73,12 @@ const NavContainer = styled.section`
   }
   .navbtn {
     width: 85%;
-    margin: 20px auto;
+    margin: 20px auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
-    padding: 20px;
+    padding: 10px 20px;
   }
 `;
 export const Buttons = styled.button`
@@ -82,4 +88,14 @@ export const Buttons = styled.button`
   background-color: #ff4343;
   color: white;
   border-radius: 5px;
+`;
+
+const FoodContainer = styled.div`
+  background-image: url("./bg.png");
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 160px);
+`;
+const FoodCard = styled.div`
+  width: 280px;
 `;
