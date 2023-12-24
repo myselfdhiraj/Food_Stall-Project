@@ -14,6 +14,8 @@
 
 Visit [Your Live Test Link](https://your-live-link.com) to explore and enjoy a variety of delicious foods!
 
+![WebApp Demo](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmNjbzB3MTkydnNlc2FwdGpieW9zbjRzc291aWtjb2sxdTBpeWx3OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Jg93FZEoT8NIulnXlr/giphy.gif)
+
 ## Description
 Welcome to our project! This is a simple and user-friendly Food Listing WebApp made with ReactJS. Our goal is to help you discover a range of tasty foods, whether you're looking for a quick dinner idea, a delightful breakfast, or some tempting sweets.
 
