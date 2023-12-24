@@ -38,6 +38,18 @@ function App() {
     }
   }
 
+  function filterBtnData(text) {
+    console.log(text);
+    if (text.toLowerCase() === "all") {
+      setfilteredData(foodData);
+    } else {
+      const filter = foodData?.filter((food) =>
+        food.type.toLowerCase().includes(text.toLowerCase())
+      );
+      setfilteredData(filter);
+    }
+  }
+
   if (loder) return <div>"Loading..."</div>;
   if (error) return <div>{error}</div>;
 
@@ -58,7 +70,9 @@ function App() {
           </div>
           <div className="navbtn">
             {["All", "Breakfast", "Lunch", "Dinner"].map((value, index) => (
-              <Buttons key={index}>{value}</Buttons>
+              <Buttons key={index} onClick={() => filterBtnData(value)}>
+                {value}
+              </Buttons>
             ))}
           </div>
         </NavContainer>
